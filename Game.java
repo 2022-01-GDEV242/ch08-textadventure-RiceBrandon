@@ -35,7 +35,7 @@ public class Game
     private void createRooms()
     {
         Room outside, theater, pub, lab, office, cavern, dungeon, jailcell,
-        labryinth, secretR, waterfall, oasis, hotspring;
+        labryinth,trapdoor, secretR, waterfall, oasis, hotspring;
       
         // create the rooms
         outside = new Room("outside the main entrance of the university");
@@ -43,10 +43,11 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
-        cavern = new Room("in a cavern");
+        cavern = new Room("in a hidden cavern");
         dungeon = new Room ("in a dungeon");
         jailcell = new Room ("in a jailcell");
-        labryinth = new Room ("discovered a labryinth");
+        labryinth = new Room ("discovered a labryinth, go east for a way out.");
+        trapdoor = new Room ("fallen for the trap!");
         secretR = new Room ("found a secret room!");
         waterfall = new Room ("found a waterfall");
         oasis = new Room ("found an oasis");
@@ -66,7 +67,27 @@ public class Game
         lab.setExit("east", office);
 
         office.setExit("west", lab);
-
+        office.setExit("south",cavern);
+        
+        cavern.setExit("north",office);
+        cavern.setExit("east",labryinth);
+        cavern.setExit("west",jailcell);
+        
+        labryinth.setExit("east",trapdoor);
+        labryinth.setExit("west",cavern);
+        
+        jailcell.setExit("north",oasis);
+        jailcell.setExit("south",waterfall);
+        
+        oasis.setExit("south",jailcell);
+        
+        waterfall.setExit("east",secretR);
+        waterfall.setExit("west",hotspring);
+        
+        secretR.setExit("west",waterfall);
+        
+        hotspring.setExit("east",waterfall);
+        
         currentRoom = outside;  // start game outside
     }
 
