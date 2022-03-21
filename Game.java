@@ -154,7 +154,11 @@ public class Game
             case LOOK:
                 look();
                 break;
-                  
+                 
+            case SHOUT:
+                shout();
+                break;
+            
             case QUIT:
                 wantToQuit = quit(command);
                 break;
@@ -181,6 +185,12 @@ public class Game
     {
         System.out.println(currentRoom.getLongDescription());
     }
+    
+    private void shout()
+    {
+        System.out.println("You shout as loudly as possible,nothing happens.");
+    }
+    
     /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.
