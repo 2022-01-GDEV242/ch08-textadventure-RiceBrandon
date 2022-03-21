@@ -150,7 +150,11 @@ public class Game
             case GO:
                 goRoom(command);
                 break;
-
+            
+            case LOOK:
+                look();
+                break;
+                  
             case QUIT:
                 wantToQuit = quit(command);
                 break;
@@ -173,7 +177,10 @@ public class Game
         System.out.println("Your command words are:");
         parser.showCommands();
     }
-
+    private void look()
+    {
+        System.out.println(currentRoom.getLongDescription());
+    }
     /** 
      * Try to go in one direction. If there is an exit, enter the new
      * room, otherwise print an error message.
@@ -198,8 +205,8 @@ public class Game
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
+    
     }
-
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
