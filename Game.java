@@ -34,12 +34,13 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office, cavern, dungeon, jailcell,
-        labryinth,trapdoor, secretR, waterfall, oasis, hotspring;
+        Room outside, theater, bathroom, pub, lab, office, cavern, dungeon, jailcell,
+        labryinth, trapdoor, secretR, waterfall, oasis, hotspring;
       
         // create the rooms
         outside = new Room("outside the main entrance of the university");
         theater = new Room("in a lecture theater");
+        bathroom = new Room("in the theater bathroom");
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
@@ -54,12 +55,16 @@ public class Game
         hotspring = new Room ("in a hot spring");
         
         
+        
         // initialise room exits
         outside.setExit("east", theater);
         outside.setExit("south", lab);
         outside.setExit("west", pub);
 
         theater.setExit("west", outside);
+        theater.setExit("south",bathroom);
+        
+        bathroom.setExit("north",theater);
 
         pub.setExit("east", outside);
 
