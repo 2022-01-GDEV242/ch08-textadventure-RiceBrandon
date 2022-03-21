@@ -46,9 +46,9 @@ public class Game
         cavern = new Room("in a hidden cavern");
         dungeon = new Room ("in a dungeon");
         jailcell = new Room ("in a jailcell");
-        labryinth = new Room ("discovered a labryinth, go east for a way out.");
-        trapdoor = new Room ("fallen for the trap!");
-        secretR = new Room ("found a secret room!");
+        labryinth = new Room ("discovered a labryinth, go east for a way out");
+        trapdoor = new Room ("fallen for the trap");
+        secretR = new Room ("found a secret room");
         waterfall = new Room ("found a waterfall");
         oasis = new Room ("found an oasis");
         hotspring = new Room ("found a hot spring");
