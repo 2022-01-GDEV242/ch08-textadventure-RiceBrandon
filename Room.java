@@ -16,7 +16,7 @@ import java.util.Iterator;
  * @version 2016.02.29
  */
 
-public class Room 
+public class Room extends Item 
 {
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.

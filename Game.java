@@ -181,6 +181,9 @@ public class Game
         System.out.println("Your command words are:");
         parser.showCommands();
     }
+    /**
+     * 
+     */
     private void look()
     {
         System.out.println(currentRoom.getLongDescription());
