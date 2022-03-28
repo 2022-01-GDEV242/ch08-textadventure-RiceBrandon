@@ -83,6 +83,7 @@ public class Game
         
         jailcell.setExit("north",oasis);
         jailcell.setExit("south",waterfall);
+        jailcell.setExit("east",cavern);
         
         oasis.setExit("south",jailcell);
         
